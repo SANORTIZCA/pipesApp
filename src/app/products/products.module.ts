@@ -1,5 +1,8 @@
-import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+
+import { PrimeNgModule } from './../prime-ng/prime-ng.module';
 
 import { ProductsRoutingModule } from './products-routing.module';
 
@@ -16,7 +19,8 @@ import { UncommonPageComponent } from './pages/uncommon-page/uncommon-page.compo
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    PrimeNgModule,
+    ProductsRoutingModule,
   ]
 })
 export class ProductsModule { }
