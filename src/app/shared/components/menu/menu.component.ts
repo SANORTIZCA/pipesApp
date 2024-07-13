@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 import { MenuItem } from 'primeng/api';
+
+
 
 @Component({
   selector: 'shared-menu',
@@ -8,6 +13,8 @@ import { MenuItem } from 'primeng/api';
 })
 export class MenuComponent implements OnInit {
   public menuItems: MenuItem[] = [];
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.menuItems = [
@@ -18,14 +25,17 @@ export class MenuComponent implements OnInit {
           {
             label: 'Textos y Fechas',
             icon: 'pi pi-align-left',
+            routerLink: '/',
           },
           {
             label: 'Números',
             icon: 'pi pi-dollar',
+            routerLink: '/numbers',
           },
           {
             label: 'No comunes',
             icon: 'pi pi-globe',
+            routerLink: '/uncommon',
           },
         ],
       },
@@ -36,6 +46,9 @@ export class MenuComponent implements OnInit {
           {
             label: 'Otro elemento',
             icon: 'pi pi-cog',
+            command: () => {
+              this.router.navigate(['/']);
+            },
           },
         ],
       },
