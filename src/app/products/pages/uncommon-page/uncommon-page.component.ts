@@ -3,8 +3,20 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-uncommon-page',
   templateUrl: './uncommon-page.component.html',
-  styleUrl: './uncommon-page.component.css'
+  styleUrl: './uncommon-page.component.css',
 })
 export class UncommonPageComponent {
+  //i18nSelect
+  public name: string = 'Fernando';
+  public gender: 'male' | 'female' = 'male';
+  /* InvitationMap es un objeto literal */
+  public invitationMap = {
+    'male' : 'invitarlo',
+    'female': 'invitarla',
+  }
 
+  public changeClient(): void {
+    this.name = 'Melissa';
+    this.gender = 'female';
+  }
 }

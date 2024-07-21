@@ -1,1 +1,49 @@
-<p>uncommon-page works!</p>
+<p-panel header="Pipes No Tan Comunes" class="p-1">
+  <p>
+    Pipes Incluidos en Angular - Usualmente en el Common Module
+  </p>
+</p-panel>
+
+<div class="grid">
+
+  <!-- i18nSelect Pipe son palabras de otro idioma que se acomodan a cierto tipo de texto-->
+   <!-- Es para configuraciones sútil que cambia dependiendo de una palabra-->
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+      <p>Saludos {{name}}, es un placer {{gender | i18nSelect:invitationMap}}
+        a nuestro evento.
+      </p>
+      <p-button
+        (click) = "changeClient()"
+        label = "Cambiar persona" >
+      </p-button>
+    </p-fieldset>
+  </div>
+
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+    </p-fieldset>
+  </div>
+
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+    </p-fieldset>
+  </div>
+
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="JSON Pipe" [toggleable]="true">
+    </p-fieldset>
+  </div>
+
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+    </p-fieldset>
+  </div>
+
+  <!-- ASYNC PIPE: Permite abrir o escuchar un observable o promesa y cuando tiene un valor lo muestra, y cuando se va a borrar el componente limpia el componente por el usuario -->
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="Async Pipe" [toggleable]="true">
+    </p-fieldset>
+  </div>
+
+</div>
