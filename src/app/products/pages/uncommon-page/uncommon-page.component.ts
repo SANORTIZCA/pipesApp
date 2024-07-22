@@ -43,4 +43,6 @@ export class UncommonPageComponent {
   public deleteClient(): void {
     this.clients.shift();
   }
+
+  /* Slice Pipe */
 }
