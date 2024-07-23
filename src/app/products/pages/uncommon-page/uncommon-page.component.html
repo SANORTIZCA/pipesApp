@@ -74,6 +74,13 @@
   <!-- ASYNC PIPE: Permite abrir o escuchar un observable o promesa y cuando tiene un valor lo muestra, y cuando se va a borrar el componente limpia el componente por el usuario -->
   <div class="col-12 md:col-6">
     <p-fieldset legend="Async Pipe" [toggleable]="true">
+      <pre *ngIf="!(myObservalbeTimer | async)">Resolviendo Observable</pre>
+      <!-- Los observables no se usan hasta que no se esta suscrito a ellos -->
+      <pre>{{myObservalbeTimer | async }}</pre>
+
+      <!-- No se cancela al recargar la página -->
+      <pre *ngIf="!(promiseValue | async)">Resolviendo Promesa</pre>
+      <pre>{{promiseValue | async }}</pre>
     </p-fieldset>
   </div>
 

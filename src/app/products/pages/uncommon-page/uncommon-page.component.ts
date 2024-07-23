@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { interval, Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-uncommon-page',
@@ -50,4 +51,17 @@ export class UncommonPageComponent {
     age: 36,
     address: 'Ottawa, Canada'
   }
+
+  //Async Pipe sirve para promesas y también para observables
+  /* interval() es una forma de crear un observable que empieza a emitir valores desde 1,2,3,4,5... basado en la cantidad de tiempo que queramos definir*/
+  public myObservalbeTimer: Observable<number> = interval(2000).pipe(
+    tap(value => console.log('tap', value)),
+  );
+
+  /* Async Pipe con promesas, las promesas no se pueden cancelar */
+  public promiseValue:  Promise <string>= new Promise ((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Tenemos datos de la promesa');
+    }, 3500);
+  });
 }
