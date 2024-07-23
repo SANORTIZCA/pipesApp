@@ -44,5 +44,10 @@ export class UncommonPageComponent {
     this.clients.shift();
   }
 
-  /* Slice Pipe */
+  //Key Value Pipe
+  public person = {
+    name: 'Fernando',
+    age: 36,
+    address: 'Ottawa, Canada'
+  }
 }

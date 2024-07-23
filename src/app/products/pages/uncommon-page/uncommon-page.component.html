@@ -54,11 +54,20 @@
 
   <div class="col-12 md:col-6">
     <p-fieldset legend="JSON Pipe" [toggleable]="true">
+      <pre>{{person | json}}</pre>
     </p-fieldset>
   </div>
 
+  <!-- Util para cambiar un objeto y barrer las propiedades como un arreglo -->
   <div class="col-12 md:col-6">
     <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+      <ul>
+        <!-- Key Value convierte este objeto en pares de valores, es decir, key:***, value: *** -->
+        <li *ngFor="let item of person | keyvalue ">
+          <!-- {{ item | json }}-->
+            <b>{{item.key | titlecase}}:</b> {{item.value}}
+        </li>
+      </ul>
     </p-fieldset>
   </div>
 
