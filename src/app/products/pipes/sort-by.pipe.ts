@@ -5,6 +5,7 @@ import { Hero } from '../interfaces/hero.interface';
 @Pipe({
   name: 'sortBy'
 })
+/* El pipe puede funcionar con genericos  y quedaría mucho más flexible y reutilizable*/
 export class SortByPipe implements PipeTransform {
 
   /* Con el keyof se basa en las propiedades de esa interfaz */
